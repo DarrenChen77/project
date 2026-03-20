@@ -1,3 +1,4 @@
+
 import SpecialCharactersClient from "./SpecialCharactersClient";
 
 export const metadata = {
