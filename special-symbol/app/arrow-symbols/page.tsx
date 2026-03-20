@@ -1,3 +1,5 @@
+import SymbolGrid from "../components/SymbolGrid";
+
 export const metadata = {
   title: "箭頭符號大全 →｜各種箭頭符號一鍵複製",
   description:
@@ -6,12 +8,10 @@ export const metadata = {
 
 export default function Page() {
   const symbols = [
-    "→","←","↑","↓","↔","↕",
-    "↗","↘","↙","↖",
-    "➜","➝","➤","➥","➔","➞","⇒","⇢"
+    "→", "←", "↑", "↓", "↔", "↕",
+    "↗", "↘", "↙", "↖",
+    "➜", "➝", "➤", "➥", "➔", "➞", "⇒", "⇢",
   ];
-
-  const copy = (s: string) => navigator.clipboard.writeText(s);
 
   return (
     <div style={{ padding: "20px" }}>
@@ -22,17 +22,7 @@ export default function Page() {
         適合用於筆記、IG、聊天或排版。
       </p>
 
-      <div style={{ fontSize: "30px", marginTop: "20px" }}>
-        {symbols.map((s) => (
-          <span
-            key={s}
-            onClick={() => copy(s)}
-            style={{ margin: "10px", cursor: "pointer" }}
-          >
-            {s}
-          </span>
-        ))}
-      </div>
+      <SymbolGrid symbols={symbols} />
     </div>
   );
 }
